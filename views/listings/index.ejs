@@ -1,0 +1,98 @@
+<% layout("/layouts/boilerplate") -%>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .filter-container {
+      display: flex;
+      flex-wrap: wrap; /* wrap items on smaller screens */
+      gap: 20px;
+      align-items: center;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-radius: 10px;
+    }
+
+    .filter-item {
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .filter-item:hover {
+      background-color: #e0f7fa;
+    }
+
+    .filter-item i {
+      margin-right: 8px;
+      color: #ff5733;
+    }
+  </style>
+
+
+<body>
+    <h1>All listings</h1>
+    <div class="filter-container">
+  <div class="filter-item"><i class="fa-solid fa-fire"></i> Trending</div>
+  <div class="filter-item"><i class="fa-solid fa-bed"></i> Beds</div>
+  <div class="filter-item"><i class="fa-solid fa-mountain"></i> Mountains</div>
+  <div class="filter-item"><i class="fa-solid fa-tree"></i> Hills</div>
+  <div class="filter-item"><i class="fa-solid fa-snowflake"></i> Snow</div>
+  <div class="filter-item"><i class="fa-solid fa-umbrella-beach"></i> Beaches</div>
+  <div class="filter-item"><i class="fa-solid fa-water-ladder"></i> Swimming</div>
+  <div class="filter-item"><i class="fa-solid fa-sun"></i> Desert</div>
+  <div class="filter-item"><i class="fa-solid fa-city"></i> City</div>
+ 
+</div>
+
+    <!-- <form method="GET" action="/listings/new">
+        <button>Create New Listing</button>
+      </form> -->
+      <div class="row row-cols-lg-3 row-cols-md-3 row-cols-sm-1 mt-3">
+
+        
+        <% for(let listing of allListings) { %>
+        
+          
+          <div class="col mb-4">
+           
+            <a href="/listings/<%= listing._id %>" class="listing-link">
+             
+            <img src="<%= listing.image.url %>" class="card-img-top" alt="listing_image" style="height: 20rem" />
+           
+           
+            <div class="card-body">
+              <p class="card-text">
+                
+                <b><%= listing.title %> <br></b>
+                ₹<%= listing.price.toLocaleString("en-IN") %> /night
+              </p>
+              
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+          <%  } %>
+
+
+      </div>
+      
+
+      <ul>
+    <ul>
+        <% for(let listing of allListings) { %>
+        <li><a href="/listings/<%= listing._id %>"> <%= listing.title %> </a></li>
+        <% } %>
+      </ul>
+</body>

@@ -1,0 +1,60 @@
+<% layout("/layouts/boilerplate") -%>
+
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <h1 class="text-center mb-4">Signup on Wonderlust</h1>
+
+      <form action="/signup" method="POST" class="needs-validation" novalidate>
+        
+        <!-- Username Field -->
+        <div class="mb-3">
+          <label for="username" class="form-label">Username</label>
+          <input
+            type="text"
+            class="form-control"
+            id="username"
+            name="username"
+            placeholder="Enter username"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <!-- Email Field -->
+        <div class="mb-3">
+          <label for="email" class="form-label">Email</label>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            name="email"
+            placeholder="Enter email"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="mb-3">
+          <label for="password" class="form-label">Password</label>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            placeholder="Enter password"
+            required
+          />
+          <div class="valid-feedback">Looks good!</div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="d-grid">
+          <button type="submit" class="btn btn-success py-20 px-4">Signup</button>
+        </div>
+        
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Listing</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="container mt-5" style="max-width: 600px;">
+    <h3 class="mb-4">Edit Your Listing</h3>
+
+    <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" class="needs-validation" novalidate enctype="multipart/form-data">
+      
+      <div class="mb-3">
+        <label for="title" class="form-label">Title</label>
+        <input name="listing[title]" id="title" value="<%= listing.title %>" type="text" class="form-control" required />
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="description" class="form-label">Description</label>
+        <textarea name="listing[description]" id="description" class="form-control" rows="3" required><%= listing.description %></textarea>
+        <div class="invalid-feedback">
+          Write a short description
+        </div>
+      </div>
+
+
+      <div class="mb-3">
+  <label for="currentImage" class="form-label">Current Image:</label><br>
+  <img src="<%= listing.image.url %>" alt="Current Listing Image" class="img-fluid rounded" style="max-width: 300px;">
+</div>
+
+
+      <div class="mb-3">
+        <label for="image" class="form-label">Upload New Image URL</label>
+        <input name="listing[image]" id="image" value="" type="file" class="form-control"/>
+    </div>
+    
+
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input name="listing[price]" id="price" value="<%= listing.price %>" type="number" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label for="country" class="form-label">Country</label>
+        <input name="listing[country]" id="country" value="<%= listing.country %>" type="text" class="form-control" required />
+        <div class="invalid-feedback">
+          Write your country name
+         </div>
+      </div>
+
+      <div class="mb-3">
+        <label for="location" class="form-label">Location</label>
+        <input name="listing[location]" id="location" value="<%= listing.location %>" type="text" class="form-control" required />
+        <div class="invalid-feedback">
+          Write a location
+        </div>
+      </div>
+
+      <button class="btn btn-success w-100" type="submit">Update Listing</button>
+    </form>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/js/script.js"></script>
+</body>
+</html>
