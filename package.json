@@ -1,6 +1,6 @@
 {
   "engines": {
-    "node":"20.18.3"
+    "node": "20.18.3"
   },
   "name": "major_project",
   "version": "1.0.0",
@@ -13,7 +13,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
-    "cloudinary": "^2.6.1",
+    "cloudinary": "^1.41.3",
     "connect-flash": "^0.1.1",
     "dotenv": "^16.5.0",
     "ejs": "^3.1.10",
